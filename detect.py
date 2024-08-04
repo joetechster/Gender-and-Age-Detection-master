@@ -55,6 +55,8 @@ while cv2.waitKey(1)<0 :
     
     resultImg,faceBoxes=highlightFace(faceNet,frame)
     if not faceBoxes:
+        cv2.putText(frame, 'No face detected', (0, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0,255,255), 2, cv2.LINE_AA)
+        cv2.imshow("Detecting age and gender", frame)
         print("No face detected")
 
     for faceBox in faceBoxes:
